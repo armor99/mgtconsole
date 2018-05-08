@@ -33,7 +33,19 @@
         </div>
       </div>
 
-      {{ partial "topmenu.html" . }} {{ block "main" . }}{{ end }} {{ partial "footer.html" . }}
+      {{ partial "topmenu.html" . }} 
+
+      <!-- page content -->
+      <div class="right_col" role="main">
+        <div class="">
+        
+          {{ block "main" . }}{{ end }}
+
+        </div>
+      </div>
+      <!-- /page content -->
+      
+      {{ partial "footer.html" . }}
 
     </div>
   </div>
@@ -48,6 +60,9 @@
   <script src="/vendors/nprogress/nprogress.js"></script>
   <!-- Custom Theme Scripts -->
   <script src="/js/custom.min.js"></script>
+
+  <!-- Javascript files used by custom page content -->
+  {{ block "js_files" . }}{{ end }}
 
 </body>
 
